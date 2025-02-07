@@ -1,0 +1,18 @@
+{
+  "clangd.path": "${workspaceFolder}/.tools/clangd_19.1.2/bin/clangd.exe",
+  "sonarlint.pathToNodeExecutable": "${workspaceFolder}/.tools/node-v23.7.0-win-x64/node.exe",
+  "cmake.debugConfig": {
+    "MIMode": "gdb",
+    "miDebuggerPath": "/c/msys64/ucrt64/bin/gdb.exe",
+    "setupCommands": [
+      {
+        "description": "Enable pretty-printing for lldb",
+        "text": "-enable-pretty-printing",
+        "ignoreFailures": true
+      }
+    ],
+    "console": "integratedTerminal",
+    "cwd": "${workspaceRoot}/cmake",
+    "environment": []
+  }
+}
