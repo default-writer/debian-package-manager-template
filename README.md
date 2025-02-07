@@ -17,3 +17,9 @@ sudo ./bin/deb.sh --setup
 ```bash
 sudo ./bin/deb.sh --helloworld --no-update
 ```
+
+## apt install
+
+```bash
+sudo apt install -y ./deb/helloworld_0.1_amd64.deb
+```
