@@ -1,5 +1,11 @@
 # debian-package-manager-template
 
+## init
+
+```bash
+sudo ./bin/deb.sh --setup
+```
+
 ## help
 
 ```bash
