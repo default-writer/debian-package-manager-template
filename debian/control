@@ -1,0 +1,12 @@
+Source: helloworld
+Section: utils
+Priority: optional
+Maintainer: Artur Mustafin <funcelot@outlook.com>
+Build-Depends: debhelper-compat (= 13), vim
+Standards-Version: 4.6.0
+
+Package: helloworld
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vim
+Description: Simple Hello World application
+ A demonstration package showing how to create Debian packages.
