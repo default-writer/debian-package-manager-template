@@ -12,14 +12,20 @@ sudo ./bin/deb.sh --setup
 ./bin/deb.sh --help
 ```
 
-## run
+## build
 
 ```bash
 sudo ./bin/deb.sh --helloworld --no-update
 ```
 
-## apt install
+## install
 
 ```bash
-sudo apt install -y ./deb/helloworld_0.1_amd64.deb
+sudo dpkg -i ./deb/helloworld_0.1_amd64.deb
+```
+
+## uninstall
+
+```bash
+sudo dpkg -r helloworld
 ```
