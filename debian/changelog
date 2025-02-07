@@ -1,3 +1,16 @@
+helloworld (1.2) unstable; urgency=medium
+
+  * updated gitpod
+  * Merge pull request #1 from default-writer/gitpod
+  * added apt install documentation section
+  * Merge pull request #2 from default-writer/apt
+  * install instructions
+  * Merge pull request #3 from default-writer/install
+  * updated maintainer info
+  * Merge pull request #4 from default-writer/versioning
+
+ -- Artur Mustafin <funcelot@outlook.com>  Fri, 7 Feb 2025 22:41:39 +0300
+
 helloworld (0.1) unstable; urgency=medium
 
   * first commit
