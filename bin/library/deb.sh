@@ -16,6 +16,41 @@ source=$(pwd)
 
 pwd=$(cd "$(dirname $(dirname $(dirname "${BASH_SOURCE[0]}")))" &> /dev/null && pwd)
 
+function create-debian-maintainer-file() {
+    local pwd
+    pwd=$(get-cwd)
+
+    source "${pwd}/.env"
+
+    mkdir -p debian
+
+    > debian/changelog
+
+    git tag --sort=-v:refname | while read -r TAG; do
+        VERSION="${TAG#v}"
+
+        DATE=$(git show -s --format='%ad' --date=rfc2822 "$TAG")
+
+        PREV_TAG=$(git describe --abbrev=0 --tags "$TAG^" 2>/dev/null || echo "")
+
+        COMMITS=""
+        if [ -z "$PREV_TAG" ]; then
+            COMMITS=$(git log --pretty='  * %s' --reverse "$TAG")
+        else
+            COMMITS=$(git log --pretty='  * %s' --reverse "$PREV_TAG..$TAG")
+        fi
+
+        {
+            echo "$PACKAGE ($VERSION) $DISTRO; urgency=$URGENCY"
+            echo
+            echo "$COMMITS"
+            echo
+            echo " -- $MAINTAINER  $DATE"
+            echo
+        } >> debian/changelog
+    done
+}
+
 function build-debian-package() {
     local file
     local files
