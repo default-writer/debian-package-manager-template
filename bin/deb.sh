@@ -74,7 +74,12 @@ while (($#)); do
             DEBIAN_FRONTEND=noninteractive apt install -y build-essential debhelper dh-make fakeroot
             ;;
 
+        "--changelog") # creates debian changelog
+            create-debian-maintainer-file
+            ;;
+
         "--helloworld") # builds debian package for helloworld
+            create-debian-maintainer-file
             build-debian-package helloworld ${updateflags}
             ;;
 
