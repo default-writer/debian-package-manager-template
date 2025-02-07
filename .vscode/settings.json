@@ -172,6 +172,7 @@
         "workbench.colorTheme": "Yitzchok (rainglow)"
     },
     "sonarlint.testFilePattern": "{**/test/**,**/*test*,**/*Test*,**/.deps/**}",
+    "sonarlint.pathToCompileCommands": "${workspaceFolder}/config/compile_commands.json",
     "editor.useTabStops": false,
     "editor.insertSpaces": true,
     "editor.dropIntoEditor.enabled": true,

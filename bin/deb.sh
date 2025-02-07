@@ -71,7 +71,7 @@ while (($#)); do
     case "$1" in
 
         "--setup") # installs dependencies for package build
-            sudo apt install build-essential debhelper dh-make
+            DEBIAN_FRONTEND=noninteractive apt install -y build-essential debhelper dh-make fakeroot
             ;;
 
         "--helloworld") # builds debian package for helloworld
